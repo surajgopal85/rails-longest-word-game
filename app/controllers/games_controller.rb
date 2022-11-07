@@ -35,10 +35,16 @@ class GamesController < ApplicationController
 
     if !hit
       @message = "Not a word!"
+      @score = 0
     elsif !match
       @message = "Word not in grid!"
+      @score = 0
     else
       @message = "GREAT JOB!"
+      len = @answer.length
+      @score = len**2
     end
+
+
   end
 end
